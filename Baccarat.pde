@@ -1,3 +1,6 @@
+ArrayList<Card> playerHand;
+ArrayList<Card> bankerHand;
+
 void setup()
 {
   size(600, 600);
