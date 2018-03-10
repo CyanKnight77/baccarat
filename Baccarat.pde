@@ -3,7 +3,9 @@ ArrayList<Card> bankerHand;
 
 final int cardAmount = 6 * 52;
 Card[] baseDeck = new Card[52];
+Card[] finalDeck = new Card[cardAmount];
 PImage[] cardBack;
+
 
 void setup()
 {
@@ -16,8 +18,25 @@ void setup()
     loadImage("blue_back.png"),
     loadImage("green_back.png"),
     loadImage("yellow_back.png")
-  }; //<>//
-}
+  };
+  
+  for(int i = 0; i < cardAmount; ++i)
+  {
+    finalDeck[i] = baseDeck[i % 52];
+  }
+  
+  for(int i = finalDeck.length - 1; i >= 0; i--)
+  {
+    int j = (int)random(0, finalDeck.length);
+    Card buffer = finalDeck[i];
+    finalDeck[i] = finalDeck[j];
+    finalDeck[j] = buffer;
+  }
+  
+  
+  
+  //
+} //<>//
 
 void generateDeck()
 {
@@ -29,6 +48,7 @@ void generateDeck()
     {
       baseDeck[cardIndex] = new Card(i + 1, getSuit(j), 
                                      loadImage(getCardImageFileName(i+1, j)));
+      cardIndex += 1;
     }
   }
 }
@@ -57,11 +77,19 @@ String getCardImageFileName(int cardNumber, int suitNumber)
     default: return null;
   }
   
+  println("loaded image: " + str);
   return str + ".png";
 }
 
 void draw()
 {
   background(0);
+  
+  //for(int i = 0; i < 52; ++i)
+  //{
+  //  image(baseDeck[i].getImage(), (i * 40) % width, (int)(i/15) * 60, 40, 60);
+  //}
+  
+  
   
 }

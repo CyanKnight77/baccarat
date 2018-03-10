@@ -27,6 +27,7 @@ public class Card
     this.suit = suit;
   }
   
+  public int getCardNumber() { return cardNumber; }
   
   public int getCardValue()
   {
@@ -35,4 +36,6 @@ public class Card
     else
       return cardNumber;
   }
+  
+  public PImage getImage() { return img; }
 }
