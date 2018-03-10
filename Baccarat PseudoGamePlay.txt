@@ -1,0 +1,54 @@
+Assign player 2 cards
+Assign Banker 2 cards
+
+If Player total = 9 &&
+	BankerTotal = 9 then Result == Draw
+	BankerTotal <=8 the Result == PlayerWin
+
+If BankerTotal = 9 &&
+	PlayerTotal = 9 then Result == Draw
+	PlayerTotal <=8 then Result  == BankerWin
+	
+If PlayerTotal = 8 && 
+	BankerTotal = 8 then Result == Draw
+	BankerTotal <=7 the Result == PlayerWin
+	
+If BankerTotal = 8 && 
+	PlayerTotal = 8 then Result == Draw
+	PlayerTotal <=7 then Result == BankerWin
+	
+	
+	
+If PlayerTotal >=6 then PlayerStand
+If PlayerTotal <=5 then PlayerDrawCard
+
+If BankerTotal >=7 then BankerStand
+If BankerTotal <=2 then BankerDrawCard
+
+If BankerTotal = 3 && Punto3 =/= 8 
+||	If BankerTotal = 4 && Punto3 =/= 0|1|8|9
+||	If BankerTotal = 5 && Punto3 =/= 0|1|2|3|8|9
+||	If BankerTotal = 6 && Punto3 =/= 8|9
+then BankerDrawCard
+
+If BankerTotal = 3 && Punto3 = 8
+||	If BankerTotal = 4 && Punto3 = 0|1|8|9
+||	If BankerTotal = 5 && Punto3 = 0|2|2|3|8|9
+||	If BankerTotal = 6 && Punto3 = 8|9
+then BankerStand
+
+If PlayerTotal = BankerTotal then Result == Draw
+If PlayerTotal > BankerTotal then Result == PlayerWin
+If PlayerTotal < BankerTotal then Result == BankerWin
+
+
+
+
+
+
+
+
+
+
+
+
