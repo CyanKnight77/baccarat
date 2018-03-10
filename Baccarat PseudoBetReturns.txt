@@ -1,0 +1,8 @@
+If Result = PlayerWin && UserBetReault = PlayerWin then UserTotalChips == UserTotalChips + UserBetAmount*2 && NextRound
+If Result = PlayerWin && UserBetReault = BankerWin|Draw then NextRound 
+
+If Result = BankerWin && UserBetReault = BankerWin then UserTotalChips == UserTotalChips + UserBetAmount*1.95 && NextRound
+If Result = BankerWin && UserBetReault = PlayerWin|Draw then NextRound
+
+If Result = Draw && UserBetReault = Draw then UserTotalChips == UserTotalChips + UserBetAmount*9
+If Result = Draw && UserBetReault = PlayerWin|BankerWin then UserTotalChips == UserTotalChips + UserBetAmount && NextRound
