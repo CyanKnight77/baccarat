@@ -2,7 +2,7 @@ Game game;
 
 void setup()
 {
-  size(600, 600);
+  size(1200, 600);
   game = new Game(); 
   //
 } //<>//
@@ -27,25 +27,33 @@ void draw()
   
   if(pHand.size() != 0)
   {
+    int cardValue = 0;
     for(int i = 0; i < pHand.size(); ++i)
     { 
       Card c = pHand.get(i);
       Rect<Float> r = c.getRect();
       r.x = (textX - (r.w() * (pHand.size() - 1))) + (r.w() * i);
-      r.y = textY - (r.h() + 20); 
+      r.y = textY - (r.h() + 40); 
       c.draw();
+      
+      cardValue += c.getCardValue();
     }
+    text(Integer.toString(cardValue), textX, textY + 40);
   }
   if(bHand.size() != 0)
   {
+    int cardValue = 0;
     for(int i = 0; i < pHand.size(); ++i)
     { 
       Card c = bHand.get(i);
       Rect<Float> r = c.getRect();
       r.x = ((textX * 3) - (r.w() * (pHand.size() - 1))) + (r.w() * i);
-      r.y = textY - (r.h() + 20); 
+      r.y = textY - (r.h() + 40); 
       c.draw();
+      
+      cardValue += c.getCardValue();
     }
+    text(Integer.toString(cardValue), textX * 3, textY + 40);
   }
   
   game.loop();
