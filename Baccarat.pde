@@ -6,7 +6,7 @@ void setup()
   game = new Game(); 
   //
 } //<>//
-
+ //<>//
 void draw()
 {
   background(0);
@@ -43,7 +43,7 @@ void draw()
   if(bHand.size() != 0)
   {
     int cardValue = 0;
-    for(int i = 0; i < pHand.size(); ++i)
+    for(int i = 0; i < bHand.size(); ++i)
     { 
       Card c = bHand.get(i);
       Rect<Float> r = c.getRect();
